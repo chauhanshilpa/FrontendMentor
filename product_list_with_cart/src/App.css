@@ -1,0 +1,7 @@
+body{
+  padding: 3rem;
+}
+
+.cancel-cart-item:hover {
+  color: hsl(12, 20%, 44%) !important;
+}
