@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import { Button, Divider } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 const style = {
   position: "absolute",
@@ -25,8 +26,10 @@ const OrderConfirmModal = ({ cartItem, setOrderConfirm }) => {
       aria-describedby="keep-mounted-modal-description"
     >
       <Box sx={style}>
+        <Box sx={{ textAlign: "right"}}>
+          <CloseIcon onClick={() => setOrderConfirm(false)} sx={{color: "gray", cursor: "pointer"}}/>
+        </Box>
         <CheckCircleOutlineOutlinedIcon
-          onClick={() => setOrderConfirm(false)}
           style={{ color: "hsl(159, 69%, 38%)" }}
         />
         <Typography

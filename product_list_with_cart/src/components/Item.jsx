@@ -15,10 +15,11 @@ const Item = ({
   id,
   activeCardId,
   setActiveCardId,
+  handleCancelItem,
 }) => {
   const [isItemInCart, setIsItemInCart] = useState(false);
   const [quantityInCart, setQuantityInCart] = useState(0);
-
+ 
   useEffect(() => {
     if (!cartItem.some((item) => item.id === id)) {
       setIsItemInCart(false);
@@ -59,7 +60,8 @@ const Item = ({
         setCartItem([...newCartItem]);
         setQuantityInCart(quantityInCart - 1);
       } else {
-        alert("value can not be negative");
+        setQuantityInCart(0);
+        handleCancelItem(itemIndex);
       }
     } else if (type === "add") {
       cartItem[itemIndex] = {

@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <Box style={{display: "flex" }}>
+    <Box style={{ display: "flex" }}>
       {orderConfirm && (
         <OrderConfirmModal
           cartItem={cartItem}
@@ -30,11 +30,16 @@ function App() {
       <Grid container>
         <Grid lg={8} style={{ marginRight: "4rem" }}>
           <Typography
-            style={{ textAlign: "center", marginBottom: "20px", fontWeight: "500", fontSize: "x-large" }}
+            style={{
+              textAlign: "center",
+              marginBottom: "20px",
+              fontWeight: "500",
+              fontSize: "x-large",
+            }}
           >
             Desserts
           </Typography>
-          <Grid container spacing={2} style={{width: "100%", margin: "auto"}}>
+          <Grid container spacing={2} style={{ width: "100%", margin: "auto" }}>
             {data.map((item, idx) => (
               <Item
                 item={item}
@@ -44,11 +49,12 @@ function App() {
                 setCartItem={setCartItem}
                 activeCardId={activeCardId}
                 setActiveCardId={setActiveCardId}
+                handleCancelItem={handleCancelItem}
               />
             ))}
           </Grid>
         </Grid>
-        <Grid lg={3}>
+        <Grid lg={3} sx={{marginTop: "2.5rem"}}>
           <CartCard
             cartItem={cartItem}
             handleCancelItem={handleCancelItem}
